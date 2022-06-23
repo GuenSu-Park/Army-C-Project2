@@ -26,3 +26,63 @@ int main() {
     
     return 0;
 }
+
+
+#include <stdio.h>
+
+int slave(int my_money) {
+	my_money += 10000;
+	return my_money;
+}
+
+int main() {
+	int my_money=100000;
+	printf("2009.12.12 재산:$%d \n",slave(my_money));
+	printf("my_money:%d",my_money);   
+	/*my_money의 값은 그대로 100000이 나온다. slave함수에서의 my_money는 그냥 이름만 같을 뿐
+	main함수에서의 my_money와는 다른 변수이므로 함수를 쓰고 나서의 main 함수의 my_money는
+	그대로 100000이다. */ 
+	
+	return 0;
+}
+
+
+문제1
+#include <stdio.h>
+
+int magicbox(int input) {
+    input += 4;
+    return input;
+}
+
+int main() {
+    int input;
+    printf("무슨 정수에 4를 더하시겠습니까? \n");
+    scanf("%d",&input);
+    
+    printf("%d에 4를 더한 값은 %d입니다.",input,magicbox(input));
+    return 0;
+} 
+
+
+문제2
+#include <stdio.h>
+
+int slave(int present_money, int today_money) {
+    present_money += today_money;
+    return present_money;
+}
+
+int main() {
+    int present_money=10000;
+    int today_money;
+
+    printf("오늘 귀족의 수입을 입력해주세요.");
+    scanf("%d",&today_money);
+    printf("현재 귀족의 재산과 오늘 귀족의 수입은 %d이다.",slave(present_money, today_money));
+    
+    return 0;
+}
+
+
+ 
