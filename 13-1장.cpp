@@ -85,4 +85,26 @@ int main() {
 }
 
 
+문제3
+#include <stdio.h>
+
+int sum(int input) {
+    int total=0;
+    for(int i=1; i<=input; i++) {
+        total += i;
+    }
+    return total;
+}
+
+int main() {
+    int number;
+    
+    printf("몇까지의 합을 원하시나요?");
+    scanf("%d",&number);
+    printf("%d까지의 합은 %d입니다!",number,sum(number));
+    
+    return 0;
+}
+
+
  
