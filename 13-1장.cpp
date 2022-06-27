@@ -107,4 +107,31 @@ int main() {
 }
 
 
- 
+문제 4
+#include <stdio.h>
+
+int get_prime_count(int n) {
+    int total=1;
+    for(int i=3; i<=n; i++) {
+        for(int j=2; j<=i-1; j++) {
+            if(i%j!=0) {
+                total++;
+            }
+            else {
+                break;
+            }
+        }
+    }
+    return total;
+}
+
+int main() {
+    int n;
+    
+    printf("몇까지의 소수의 개수를 알고 싶으세요?");
+    scanf("%d", &n);
+    
+    printf("%d까지의 소수의 개수는 %d입니다!", n, get_prime_count(n));
+    
+    return 0;
+} 
