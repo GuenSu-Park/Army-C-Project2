@@ -135,3 +135,21 @@ int main() {
     
     return 0;
 } 
+
+
+
+int get_prime_count(int n) {
+    int total=1;
+    for(int i=3; i<=n; i++) {
+        for(int j=2; j<=i-1; j++) {
+            if ((i%j!=0) && (j==i-1)) {
+                total++;
+            }
+            else {
+                break;
+            }
+            break;
+        }
+    }
+    return total;
+}
